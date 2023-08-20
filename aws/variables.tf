@@ -1,3 +1,3 @@
-variable "aws_key_pair" {
+variable "aws_private_key" {
   default = "./default-ec2"
 }

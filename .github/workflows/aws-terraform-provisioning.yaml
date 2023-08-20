@@ -8,6 +8,8 @@ on:
 jobs:
   aws_terraform:
     runs-on: ubuntu-latest
+    env:
+      TF_VAR_aws_private_key: ${{ secrets.AWS_PRIVATE_KEY }}
 
     steps:
     - name: Checkout
@@ -18,7 +20,6 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        cli_config_credentials_token: ${{ secrets.AWS_PRIVATE_KEY }}
         aws-region: us-east-1
 
     - name: Terraform Init and Apply for AWS
