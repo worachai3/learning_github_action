@@ -24,6 +24,6 @@ jobs:
 
     - name: Terraform Init and Apply for AWS
       run: |
-        cd aws/users
+        cd aws/web
         terraform init
         terraform apply -auto-approve
