@@ -106,7 +106,7 @@ resource "aws_instance" "http_server" {
     type        = "ssh"
     host        = self.public_ip
     user        = "ec2-user"
-    private_key = var.aws_private_key
+    private_key = var.is_github_actions ? var.aws_private_key : file(var.aws_private_key)
   }
 
   provisioner "remote-exec" {

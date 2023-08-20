@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TF_VAR_aws_private_key: ${{ secrets.TF_VAR_AWS_KEY_PAIR }}
+      TF_VAR_is_github_actions: true
 
     steps:
     - name: Checkout
