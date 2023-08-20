@@ -1,3 +1,3 @@
 variable "aws_private_key" {
-  default = "./default-ec2.pem"
+  description = "SSH private key"
 }
