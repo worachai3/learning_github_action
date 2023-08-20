@@ -1,5 +1,5 @@
 variable "users" {
-  type = "list"
+  type = list
   default = [
 	{
 	  name = "worachai"
