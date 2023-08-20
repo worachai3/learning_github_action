@@ -91,8 +91,9 @@ resource "aws_instance" "http_server" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.http_server_sg.id]
 
-  for_each  = toset(data.aws_subnets.default_subnets.ids)
-  subnet_id = each.value
+  # for_each  = toset(data.aws_subnets.default_subnets.ids)
+  # subnet_id = each.value
+  subnet_id = data.aws_subnet_ids.default_subnet_ids.ids[0]
 
   connection {
     type        = "ssh"
