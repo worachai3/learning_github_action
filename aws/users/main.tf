@@ -26,5 +26,5 @@ provider "aws" {
 }
 
 resource "aws_iam_user" "my_iam_user" {
-  name = "${terraform.workspace}_my_iam_user"
+  name = "${var.project_name}_${var.application_name}_${var.environment}"
 }
