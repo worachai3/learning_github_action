@@ -7,7 +7,7 @@ variable project_name {
 }
 
 variable environment {
-  default = "qa"
+  default = "dev"
 }
 
 terraform {
