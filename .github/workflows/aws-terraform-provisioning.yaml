@@ -9,7 +9,7 @@ jobs:
   aws_terraform:
     runs-on: ubuntu-latest
     env:
-      TF_VAR_aws_private_key: ${{ secrets.AWS_PRIVATE_KEY }}
+      TF_VAR_aws_private_key: ${{ secrets.TF_VAR_AWS_KEY_PAIR }}
 
     steps:
     - name: Checkout
