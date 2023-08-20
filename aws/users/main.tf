@@ -1,15 +1,3 @@
-variable application_name {
-  default = "07-backend-state"
-}
-
-variable project_name {
-  default = "users"
-}
-
-variable environment {
-  default = "dev"
-}
-
 terraform {
   backend "s3" {
     bucket         = "dev-applications-backend-state-worachai"
@@ -26,5 +14,7 @@ provider "aws" {
 }
 
 resource "aws_iam_user" "my_iam_user" {
-  name = "${var.project_name}_${var.application_name}_${var.environment}"
+  for_each = var.users
+  name = "${each.value.name}_${var.project_name}_${var.application_name}_${var.environment}"
+  # name = "${var.project_name}_${var.application_name}_${var.environment}"
 }
