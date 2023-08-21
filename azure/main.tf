@@ -13,6 +13,6 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "appgrp" {
-	name = "app-grp"
+	name = "app-grp-2"
 	location = "West Europe"
 }
