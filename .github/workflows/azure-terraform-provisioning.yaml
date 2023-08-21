@@ -1,25 +1,25 @@
-name: Azure Terraform Provisioning
+# name: Azure Terraform Provisioning
 
-on:
-  push:
-    branches:
-      - master
+# on:
+#   push:
+#     branches:
+#       - master
 
-jobs:
-  terraform:
-    runs-on: ubuntu-latest
+# jobs:
+#   terraform:
+#     runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+#     steps:
+#     - name: Checkout
+#       uses: actions/checkout@v2
 
-    - name: Set up Azure credentials
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+#     - name: Set up Azure credentials
+#       uses: azure/login@v1
+#       with:
+#         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Terraform Init and Apply for Azure
-      run: |
-        cd azure
-        terraform init
-        terraform apply -auto-approve
+#     - name: Terraform Init and Apply for Azure
+#       run: |
+#         cd azure
+#         terraform init
+#         terraform apply -auto-approve
