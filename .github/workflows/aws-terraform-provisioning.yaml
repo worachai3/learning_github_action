@@ -1,31 +1,31 @@
-name: AWS Terraform Provisioning
+# name: AWS Terraform Provisioning
 
-on:
-  push:
-    branches:
-      - master
+# on:
+#   push:
+#     branches:
+#       - master
 
-jobs:
-  aws_terraform:
-    runs-on: ubuntu-latest
-    env:
-      TF_VAR_aws_private_key: ${{ secrets.TF_VAR_AWS_KEY_PAIR }}
-      TF_VAR_is_github_actions: true
+# jobs:
+#   aws_terraform:
+#     runs-on: ubuntu-latest
+#     env:
+#       TF_VAR_aws_private_key: ${{ secrets.TF_VAR_AWS_KEY_PAIR }}
+#       TF_VAR_is_github_actions: true
 
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+#     steps:
+#     - name: Checkout
+#       uses: actions/checkout@v2
 
-    - name: Set up AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1
+#     - name: Set up AWS credentials
+#       uses: aws-actions/configure-aws-credentials@v1
+#       with:
+#         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#         aws-region: us-east-1
 
-    - name: Terraform Init and Apply for AWS
-      run: |
-        cd aws/web
-        terraform init
-        terraform apply -target=data.aws_subnets.default_subnets -auto-approve
-        terraform apply -auto-approve
+#     - name: Terraform Init and Apply for AWS
+#       run: |
+#         cd aws/web
+#         terraform init
+#         terraform apply -target=data.aws_subnets.default_subnets -auto-approve
+#         terraform apply -auto-approve
