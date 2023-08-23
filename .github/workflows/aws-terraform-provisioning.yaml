@@ -25,7 +25,7 @@ jobs:
 
     - name: Terraform Init and Apply for AWS
       run: |
-        cd aws/web
+        cd web
         terraform init
         terraform apply -target=data.aws_subnets.default_subnets -auto-approve
         terraform apply -auto-approve
