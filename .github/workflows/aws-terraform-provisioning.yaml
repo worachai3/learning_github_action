@@ -3,7 +3,7 @@ name: AWS Terraform Provisioning
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   aws_terraform:
