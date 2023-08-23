@@ -113,7 +113,7 @@ resource "aws_instance" "http_server" {
     inline = [
       "sudo yum install httpd -y",                                                                                //install httpd
       "sudo service httpd start",                                                                                 //start httpd
-      "echo Welcome to in28minutes - Virtual Server is at ${self.public_dns} | sudo tee /var/www/html/index.html" //copy a file
+      "echo Welcome to my web page - Virtual Server is at ${self.public_dns} | sudo tee /var/www/html/index.html" //copy a file
     ]
   }
 }
